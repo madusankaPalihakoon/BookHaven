@@ -2,18 +2,22 @@
 * text=auto
 
 # Explicitly declare text files you want to always be normalized and converted to LF
-*.php text
-*.sql text
-*.css text
-*.json text
-*.js text
-*.jsx text
-*.ts text
-*.tsx text
-*.html text
-*.md text
-*.yml text
-*.yaml text
+*.php text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.sql text eol=lf
+
+# Ensure .gitattributes and .gitignore use LF
+.gitattributes text eol=lf
+.gitignore text eol=lf
 
 # Denote binary files to avoid converting them
 *.png binary

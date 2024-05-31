@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['token'])){
+if (!isset($_SESSION['token'])) {
     header('Location: login.php');
     exit();
 }
@@ -14,7 +14,7 @@ $name = htmlspecialchars_decode($_GET['name']);
 $data = getBookDetail($id, $name);
 $data = json_decode($data, true);
 
-if(!$data['status']){
+if (!$data['status']) {
     $book = [];
 }
 
@@ -22,15 +22,17 @@ $book = $data['data'];
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Uwu Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uwu Library</title>
     <!-- <link rel="stylesheet" type="text/css" href="lib.css"> -->
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
+
 </head>
+
 <body class='book-detils-bg'>
     <div class='donet-bg-overlay'></div>
     <div class='donet-content'>
@@ -60,10 +62,16 @@ $book = $data['data'];
                 <p class="price">$19.99</p>
                 <p><strong>Description:</strong><?php echo htmlspecialchars($book['book_description'], ENT_QUOTES, 'UTF-8') ?></p>
                 <div class="purchase-options">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" value="1" min="1">
-                    <button class="add-to-cart-button">Add to Cart</button>
-                    <button class="buy-now-button">Buy Now</button>
+                    <form action="./process.php" method="get">
+                        <input type="hidden" name="action" value="process">
+                        <input type="hidden" name="id" value="<?php echo $book['id']  ?>">
+                        <input type="hidden" name="name" value="<?php echo $book['name']  ?>">
+                        <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+                        <input type="hidden" name="isbn" value="<?php echo $book['ISBN']; ?>">
+                        <label for="quantity">Quantity:</label>
+                        <input class="quantity-input" type="number" id="quantity" name="quantity" value="1" min="1">
+                        <input class="process-btn" type="submit" value="Process">
+                    </form>
                 </div>
                 <ul class="additional-info">
                     <li><strong>Publisher:</strong><?php echo htmlspecialchars($book['publisher'], ENT_QUOTES, 'UTF-8') ?></li>
@@ -78,6 +86,7 @@ $book = $data['data'];
 
 
 
-<script src="../assets/js/button.js"></script>
+        <script src="../assets/js/button.js"></script>
 </body>
+
 </html>

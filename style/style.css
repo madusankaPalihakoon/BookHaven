@@ -1474,3 +1474,129 @@ p.details {
 .additional-info li {
   margin: 5px 0;
 }
+
+.process-btn {
+  padding: 5px 20px 5px 20px;
+  background-color: var(--button-secondry);
+  color: var(--dark-font);
+  font-size: larger;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.process-btn:hover {
+  background-color: var(--button-secondry-hover);
+}
+
+.quantity-input {
+  padding: 6px;
+  outline: none;
+  border: none;
+  width: 40px;
+}
+
+/* process */
+.process-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--button-primary);
+  place-items: center;
+  justify-content: center;
+}
+
+.process-heading {
+  font-weight: 700;
+  color: var(--dark-font);
+  text-transform: uppercase;
+  font-size: xx-large;
+  text-align: center;
+  padding: 5px 5px;
+}
+
+.process-content {
+  background-color: #6aa378;
+  padding: 20px;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 900px;
+}
+
+.process-form {
+  padding: 5px 5px;
+  margin-inline: auto;
+}
+
+.process-form .process-form-feild {
+  display: grid;
+  max-width: 500px;
+  width: 95%;
+  margin-inline: auto;
+  padding: 5px 5px;
+}
+
+.process-form .process-form-feild .txt-feild {
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 2px;
+}
+
+.process-form .process-form-feild .quantity-txt {
+  width: 50px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  margin-left: 5px;
+}
+
+.price-txt {
+  width: 200px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  margin-left: 5px;
+}
+
+.form-inline-feild {
+  display: inline-flex;
+  place-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.option-feild {
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 5px;
+}
+
+.process-submit {
+  min-width: fit-content;
+  max-width: 500px;
+  width: 50%;
+  margin-inline: auto;
+  margin-top: 7px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--button-secondry-hover);
+  font-size: larger;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.process-submit:hover {
+  background-color: var(--button-secondry);
+}
+/* process */
